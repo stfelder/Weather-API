@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-//Wetter22
+//Wetter222
             //https://openweathermap.org/weather-conditions
             //https://openweathermap.org/weather-data
 //Calling API http://openweathermap.org/api */
