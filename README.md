@@ -1,6 +1,4 @@
 # Weather-API
-Weather-API
-===========
 
 The «WeahterAPI» allows a simple implementation of «openweathermap.org». The following has been implemented:
 + Current weather data
