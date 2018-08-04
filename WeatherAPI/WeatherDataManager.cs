@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-//Wetter2228899888
+//Wetter2228899
             //https://openweathermap.org/weather-conditions
             //https://openweathermap.org/weather-data
 //Calling API http://openweathermap.org/api */
@@ -64,9 +64,9 @@ namespace WeatherAPI
             weatherCurrent.weather.clouds = rootObject.clouds.all;
             weatherCurrent.weather.humidity = rootObject.main.humidity;
             weatherCurrent.weather.pressure = rootObject.main.pressure;
-            weatherCurrent.weather.temp = rootObject.main.temp;
-            weatherCurrent.weather.temp_max = rootObject.main.temp_max;
-            weatherCurrent.weather.temp_min = rootObject.main.temp_min;
+            weatherCurrent.weather.temperatur = rootObject.main.temp;
+            weatherCurrent.weather.temperatur_max = rootObject.main.temp_max;
+            weatherCurrent.weather.temperatur_min = rootObject.main.temp_min;
             weatherCurrent.weather.wind.deg = rootObject.wind.deg;
             weatherCurrent.weather.wind.speed = rootObject.wind.speed;
             weatherCurrent.weather.sunrise = UnixTimeStampToDateTime(rootObject.sys.sunrise);
@@ -115,9 +115,9 @@ namespace WeatherAPI
                 weather.clouds = x.clouds.all;
                 weather.humidity = x.main.humidity;
                 weather.pressure = x.main.pressure;
-                weather.temp = x.main.temp;
-                weather.temp_max = x.main.temp_max;
-                weather.temp_min = x.main.temp_min;
+                weather.temperatur = x.main.temp;
+                weather.temperatur_max = x.main.temp_max;
+                weather.temperatur_min = x.main.temp_min;
                 weather.wind.deg =x.wind.deg;
                 weather.wind.speed = x.wind.speed;
                 weather.dt = UnixTimeStampToDateTime(x.dt);

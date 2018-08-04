@@ -26,7 +26,7 @@ namespace WeatherAPI.View
         public void setWeather (WeatherDataManager weather)
         {
             this.weather = weather;
-            temperatur.Text = weather.weatherCurrent.weather.temp.ToString() + "°C";
+            temperatur.Text = weather.weatherCurrent.weather.temperatur.ToString() + "°C";
             lbl_Location.Text = weather.weatherCurrent.location.nameLocality;
             string path = Path.Combine(Environment.CurrentDirectory, @"GUI\ImageWeather\",  weather.weatherCurrent.weather.icon +".png");
             Image image = Image.FromFile(path);

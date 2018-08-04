@@ -33,11 +33,11 @@ namespace WeatherAPI.Model.Base
         public string main { get; set; }//
         public string description { get; set; }//
         public string icon { get; set; }//
-        public double temp { get; set; }//
+        public double temperatur { get; set; }//
         public double pressure { get; set; }//
         public int humidity { get; set; }//
-        public double temp_min { get; set; }//
-        public double temp_max { get; set; }//
+        public double temperatur_min { get; set; }//
+        public double temperatur_max { get; set; }//
         public Wind wind = new Wind();
         public double clouds { get; set; }//
 
@@ -52,11 +52,11 @@ namespace WeatherAPI.Model.Base
             temp += "\nKind of wheather: " + main;
             temp += "\nDescripton: " + description;
             temp += "\nIconID: " + icon;
-            temp += "\nTemperatur: " + this.temp + "°C";
+            temp += "\nTemperatur: " + this.temperatur + "°C";
             temp += "\nPressure: " + pressure + "hPA" ;
             temp += "\nHumidity: " + humidity + "%";
-            temp += "\nMax. Temperture: " + temp_max;
-            temp += "\nMin. Temperture: " + temp_min;
+            temp += "\nMax. Temperture: " + temperatur_max;
+            temp += "\nMin. Temperture: " + temperatur_min;
             temp += "\nWind Speed: " + wind.speed;
             temp += "\nWind Deg.:" + wind.deg+"°";
             temp += "\nClouds: " + clouds;
