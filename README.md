@@ -28,7 +28,7 @@ Some weather data:
 Console.WriteLine("Current Temperture: {0} °C", weatherData.weatherCurrent.weather.temperatur); //Current temperature
 Console.WriteLine("description weather: {0}", weatherData.weatherCurrent.weather.description); //Description of current weather
 ```
-weather forecasting next 5 Days in 3 hour steps:
+weather forecasting next 5 Days in 3 hour steps, it shows you the max. temperatur in the next 5 days:
 ```csharp
 double maxTemperatur = -999;
 DateTime date = new DateTime();
