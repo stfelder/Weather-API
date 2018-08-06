@@ -11,8 +11,8 @@ namespace DemoWeatherAPI
     {
         static void Main(string[] args)
         {
-            WeatherDataManager weatherData = new WeatherDataManager("1be547da8c882a9417d9993e7320c090", "Obfelden,CH");
-            //WeatherDataManager weatherData = new WeatherDataManager("YOUR-API- KEY", "London,UK");
+           
+            WeatherDataManager weatherData = new WeatherDataManager("YOUR-API- KEY", "London,UK");
 
             //Current Wetter
             Console.WriteLine("LON: {0}, LAT: {1}", weatherData.weatherCurrent.location.coord.lon, weatherData.weatherCurrent.location.coord.lat); //The coordinates of the weather
