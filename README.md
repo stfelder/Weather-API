@@ -13,7 +13,7 @@ Details about the API of openweathermap.org can be found here:
 To use the API you need an API key. For this purpose you have to register at openweathermap.org.
 
 ### Sampel
-####You can find a quick example in the folder "DemoWeatherAPI", but still here are the most important instructions:
+You can find a quick example in the folder "DemoWeatherAPI", but still here are the most important instructions:
 
 Initialize the API with your API key and a location from which you want to have the weather data:
 ```csharp
