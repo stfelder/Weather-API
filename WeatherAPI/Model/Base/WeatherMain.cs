@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace WeatherAPI.Model.Base
 {
+//Structur:
     //Lokalisation
         //Coord
         //Ortschaft
@@ -43,7 +44,7 @@ namespace WeatherAPI.Model.Base
 
 
 
-        public DateTime dt { get; set; }//Zeit der Wetterdaten
+        public DateTime dt { get; set; }//Time of weatherdata
 
         public override string ToString()
         {
@@ -71,9 +72,9 @@ namespace WeatherAPI.Model.Base
     public abstract class Location
     {
         public Coord coord = new Coord();
-        public string nameCountry { get; set; }//UK
+        public string nameCountry { get; set; }//exp.: UK
         public int idCity { get; set; }
-        public string nameLocality { get; set; }//London
+        public string nameLocality { get; set; }//exp.: London
 
         public override string ToString()
         {
@@ -93,8 +94,8 @@ namespace WeatherAPI.Model.Base
     {
     }
 }
+// API description from openweathermap.org:
 /*
- * 
  * coord
         coord.lon City geo location, longitude
         coord.lat City geo location, latitude
