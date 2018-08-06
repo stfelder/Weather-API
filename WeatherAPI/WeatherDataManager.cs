@@ -7,10 +7,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-//Wetter2228899
-            //https://openweathermap.org/weather-conditions
-            //https://openweathermap.org/weather-data
-//Calling API http://openweathermap.org/api */
+//Info's API openweathermap.org
+//https://openweathermap.org/weather-conditions
+//https://openweathermap.org/weather-data
+//Calling API: http://openweathermap.org/api
 namespace WeatherAPI
 {
     public class WeatherDataManager
@@ -20,12 +20,9 @@ namespace WeatherAPI
         public Model.WeahterCurrent.WeatherModelCurn weatherCurrent = new Model.WeahterCurrent.WeatherModelCurn();
         public Model.WeatherInNext5Days.weatherInNext5Days weatherNext5Days = new Model.WeatherInNext5Days.weatherInNext5Days();
         public List<Model.WeatherInNext5Days.Weather> list = new List<Model.WeatherInNext5Days.Weather>();
-        //public DateTime dt = new DateTime();
-
-        //public WeatherDataManager() { }
 
         /// <summary>
-        /// 
+        /// Constructor
         /// </summary>
         /// <param name="apiKey"></param>
         /// <param name="city"></param>
@@ -49,7 +46,7 @@ namespace WeatherAPI
             }
 
             Model.WeahterCurrent.JSONHelper.RootObject rootObject = JsonConvert.DeserializeObject<Model.WeahterCurrent.JSONHelper.RootObject>(apiResponse);
-            //Cord
+            //Location
             weatherCurrent.location.coord.lat = rootObject.coord.lat;
             weatherCurrent.location.coord.lon = rootObject.coord.lon;
             weatherCurrent.location.nameCountry =  rootObject.sys.country;
@@ -72,18 +69,11 @@ namespace WeatherAPI
             weatherCurrent.weather.sunrise = UnixTimeStampToDateTime(rootObject.sys.sunrise);
             weatherCurrent.weather.sunset = UnixTimeStampToDateTime(rootObject.sys.sunset);
             weatherCurrent.weather.visibilityMeter = rootObject.visibility;
-            weatherCurrent.weather.dt = UnixTimeStampToDateTime(rootObject.dt); // Zeit der Wetterdateb
+            weatherCurrent.weather.dt = UnixTimeStampToDateTime(rootObject.dt); // Time Weatherdata
         }
 
         public void updateWheatherNext5Days()
         {
-
-
-            //https://openweathermap.org/weather-conditions
-            //https://openweathermap.org/weather-data
-            //http://openweathermap.org/api
-
-
             HttpWebRequest apiRequest = WebRequest.Create("http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + apiKey + "&units=metric") as HttpWebRequest;
             string apiResponse = "";
             using (HttpWebResponse response = apiRequest.GetResponse() as HttpWebResponse)
@@ -92,12 +82,7 @@ namespace WeatherAPI
                 apiResponse = reader.ReadToEnd();
             }
 
-
-
-
             Model.WeatherInNext5Days.JSONHelper.RootObject rootObject = JsonConvert.DeserializeObject<Model.WeatherInNext5Days.JSONHelper.RootObject>(apiResponse);
-            //wheathercur
-            //Location
             weatherNext5Days.location.coord.lat = rootObject.city.coord.lat;
             weatherNext5Days.location.coord.lon = rootObject.city.coord.lon;
             weatherNext5Days.location.nameCountry = rootObject.city.country;
@@ -123,14 +108,7 @@ namespace WeatherAPI
                 weather.dt = UnixTimeStampToDateTime(x.dt);
 
                 weatherNext5Days.list.Add(weather);
-            }
-        
-
-
-            double maxSpeed = 0;
-            string maxSpeedTime = "";
-
-            
+            }          
 
         }
 
@@ -142,7 +120,6 @@ namespace WeatherAPI
         }
 
         /// <summary>
-        /// Konvertiert eine UNIX Zeitstempel in eine C# «DataTime» Objekt.
         /// Converts a UNIX timestamp to a "C# DataTime" object.
         /// </summary>
         /// <param name="unixTimeStamp"></param>
@@ -157,8 +134,6 @@ namespace WeatherAPI
 
         public string getCurrentWeatherAsJSON()
         {
-            /*Calling API http://openweathermap.org/api */
-
             HttpWebRequest apiRequest = WebRequest.Create("http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey + "&units=metric") as HttpWebRequest;
 
             string apiResponse = "";
